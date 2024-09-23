@@ -10,7 +10,7 @@ lint:
 	ruff check *.ipynb
 
 test:
-	python -m pytest -vv --nbval -cov=lib -cov=sciprt *.py test_*.py *.ipynb
+	python -m pytest -vv --nbval --cov=lib --cov=sciprt *.py test_*.py *.ipynb
 
 
 all: install lint test format
