@@ -1,15 +1,16 @@
 install:
 	pip install --upgrade pip && \
-	pip install -r requirement.txt
+	pip install -r requirements.txt
 
 format:
 	black *.py
 
 lint:
-	pylint --disable=R,C *.py
+	ruff check test_*.py && ruff check *.py
+	ruff check *.ipynb
 
 test:
-	python -m pytest test_hello.py
+	python -m pytest -vv --nbval -cov=lib -cov=sciprt *.py test_*.py *.ipynb
 
 
-all: install lint test
+all: install lint test format
