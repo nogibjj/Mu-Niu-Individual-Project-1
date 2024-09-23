@@ -7,7 +7,7 @@
 
 ### Demo Video
 
-[Demo - Click Here](https://youtu.be/ztUyUJDyPsc)
+[Click Here](https://youtu.be/-TGdicHmuOw)
 
 ### About the Data
 The data used is about Student Performance from Kaggle. The dataset contains features such as Student ID, Attendance Rate, Study Hours Per Week, Previous Grade, etc.
