@@ -1,43 +1,59 @@
-# Mu-Niu-Pandas-Descriptive-Statistics-Project Summary Report
+# IDS-706-Data-Engineering Individual Project 1
 
-[![CI/CD run](https://github.com/nogibjj/Mu-Niu-Pandas-Descriptive-Statistics-Script/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/Mu-Niu-Pandas-Descriptive-Statistics-Script/actions/workflows/hello.yml)
+### Demo Video
 
-# Student Performance Analysis and Descriptive Statistics
+[Demo - Click Here](https://youtu.be/ztUyUJDyPsc)
 
-## Project Overview
+### About the Data
+The data used is about Student Performance from Kaggle. The dataset contains features such as Student ID, Attendance Rate, Study Hours Per Week, Previous Grade, etc.
 
-This project is designed to analyze student performance using the dataset `student_performance.csv`. The goal is to implement a Python script that calculates statistical metrics (mean, median, and standard deviation) for various numeric columns in the dataset. Additionally, the project provides visual insights using histograms for specified columns.
+### Functions
 
-The project incorporates best practices for code quality and testing, leveraging Python tools like Pylint for linting, pytest for testing, and matplotlib for visualization.
+The main Python files in this project are `lib.py` and `script.py`. Below are the functions within each file:
 
-## Files Overview
+#### **`lib.py`** contains four functions:
 
-- **`hello.py`**: Contains the main logic for calculating the mean, median, and standard deviation of a specified column in the dataset. It also includes functionality to draw histograms for data visualization.
-- **`test_hello.py`**: Includes test cases for the functions in `hello.py`. The tests validate the correctness of the statistical calculations and check for proper handling of non-numeric columns.
-- **`student_performance.csv`**: The dataset used for analysis, containing student performance data with various attributes.
-- **`Makefile`**: Automates the process of installation, linting, formatting, and testing the codebase.
-- **`requirements.txt`**: Specifies the Python dependencies required for this project. This includes tools like `pytest`, `pylint`, `pandas`, and `matplotlib`.
+1. **`read_data(path)`**: Reads a CSV file from the provided path using Pandas and returns a DataFrame.
 
-## Functionality
+Sample Data:
 
-The primary functionality of the project is to compute descriptive statistics for numerical columns of the dataset and to visualize the distribution of these columns using histograms.
+![alt text](plots/sample_data.png)
 
-### Key Functions in `hello.py`:
+#### **`script.py`** contains the following functions:
 
-1. **`calc_mean(df, colname)`**: Calculates the mean of the specified column. Returns a message if the column is not numeric or doesn't exist.
-2. **`calc_median(df, colname)`**: Computes the median of the specified column.
-3. **`calc_sd(df, colname)`**: Computes the standard deviation for the given column.
-4. **`draw(df, colname)`**: Generates a histogram for the specified column using `matplotlib`.
+1. **`calc_mean(df, colname)`**: Calculates the mean of a specified column in the DataFrame, handling both numeric and non-numeric data.
 
-Here is an example of the draw() function plotting the histogram for the Attendance Rate column:
+2. **`calc_median(df, colname)`**: Computes the median of a specified column in the DataFrame.
 
-![Attendance Rate Histogram](AttendanceRate.png)
+3. **`calc_sd(df, colname)`**: Computes the standard deviation of the specified column.
 
+4. **`draw(df, colname)`**: Creates a histogram of the specified column using `matplotlib`.
 
 ### Testing
+The project also includes two test files, `test_lib.py` and `test_script.py`, which use the `pytest` framework to ensure that the functions perform correctly. Tests are executed automatically using GitHub Actions.
 
-Testing is an important part of this project. The test suite in `test_hello.py` ensures that:
+- **`test_lib.py`**: Contains test cases for the functions in `lib.py`.
+- **`test_script.py`**: Contains test cases for the functions in `script.py`.
 
-- Mean, median, and standard deviation calculations are correct for numerical columns.
-- Non-numeric columns are handled appropriately with informative messages.
-- Histograms are generated without errors.
+The `requirements.txt` includes all necessary dependencies to run the project, including `pytest`, `pytest-cov`, `pandas`, and `matplotlib`
+
+
+### Summary Statistics
+
+Mean
+
+![alt text](plots/mean.png)
+
+Median
+
+![alt text](plots/median.png)
+
+Standard Deviation
+
+![alt text](plots/std.png)
+
+### Sample Data Visualization
+
+![](plots/AttendanceRate.png)
+
+![](plots/study_hours.png)
